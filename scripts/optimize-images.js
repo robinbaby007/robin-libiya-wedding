@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const inputDir = path.join(__dirname, '..', 'public', 'photos');
-const outputDir = path.join(__dirname, '..', 'public', 'photos');
 
 const MAX_WIDTH = 1200;
 const QUALITY = 70;
@@ -16,6 +15,7 @@ async function processImage(filename) {
     const originalSize = fs.statSync(inputPath).size;
 
     await sharp(inputPath)
+      .rotate() // <-- This respects EXIF orientation
       .resize(MAX_WIDTH, null, { withoutEnlargement: true })
       .jpeg({ quality: QUALITY, mozjpeg: true })
       .toFile(tempPath);
@@ -32,7 +32,7 @@ async function processImage(filename) {
 }
 
 async function main() {
-  console.log('Optimizing images...\n');
+  console.log('Optimizing images with correct orientation...\n');
 
   const files = fs.readdirSync(inputDir).filter(f => /\.(jpg|jpeg)$/i.test(f));
 
