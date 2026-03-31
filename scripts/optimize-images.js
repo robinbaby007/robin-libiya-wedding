@@ -15,7 +15,6 @@ async function processImage(filename) {
     const originalSize = fs.statSync(inputPath).size;
 
     await sharp(inputPath)
-      .rotate() // <-- This respects EXIF orientation
       .resize(MAX_WIDTH, null, { withoutEnlargement: true })
       .jpeg({ quality: QUALITY, mozjpeg: true })
       .toFile(tempPath);
@@ -32,7 +31,7 @@ async function processImage(filename) {
 }
 
 async function main() {
-  console.log('Optimizing images with correct orientation...\n');
+  console.log('Optimizing images (no rotation)...\n');
 
   const files = fs.readdirSync(inputDir).filter(f => /\.(jpg|jpeg)$/i.test(f));
 
