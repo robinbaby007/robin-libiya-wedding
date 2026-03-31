@@ -15,18 +15,20 @@ export default function Home() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const basePath = "/robin-libiya-wedding";
+
   const photos = [
-    { src: "/photos/DSC08228.JPG", alt: "Robin and Libiya" },
-    { src: "/photos/DSC08110.JPG", alt: "Together" },
-    { src: "/photos/DSC07109.JPG", alt: "Beautiful moment" },
-    { src: "/photos/DSC07100.JPG", alt: "Love" },
-    { src: "/photos/DSC07097.JPG", alt: "Joy" },
-    { src: "/photos/DSC07077.JPG", alt: "Happiness" },
-    { src: "/photos/DSC06965.JPG", alt: "Together forever" },
-    { src: "/photos/DSC06920.JPG", alt: "Beautiful couple" },
-    { src: "/photos/DSC06410.JPG", alt: "Sweet moments" },
-    { src: "/photos/DSC05979.JPG", alt: "Forever" },
-    { src: "/photos/DSC05910.JPG", alt: "Always" },
+    { src: `${basePath}/photos/DSC08228.JPG`, alt: "Robin and Libiya" },
+    { src: `${basePath}/photos/DSC08110.JPG`, alt: "Together" },
+    { src: `${basePath}/photos/DSC07109.JPG`, alt: "Beautiful moment" },
+    { src: `${basePath}/photos/DSC07100.JPG`, alt: "Love" },
+    { src: `${basePath}/photos/DSC07097.JPG`, alt: "Joy" },
+    { src: `${basePath}/photos/DSC07077.JPG`, alt: "Happiness" },
+    { src: `${basePath}/photos/DSC06965.JPG`, alt: "Together forever" },
+    { src: `${basePath}/photos/DSC06920.JPG`, alt: "Beautiful couple" },
+    { src: `${basePath}/photos/DSC06410.JPG`, alt: "Sweet moments" },
+    { src: `${basePath}/photos/DSC05979.JPG`, alt: "Forever" },
+    { src: `${basePath}/photos/DSC05910.JPG`, alt: "Always" },
   ];
 
   const openLightbox = useCallback((index: number) => {

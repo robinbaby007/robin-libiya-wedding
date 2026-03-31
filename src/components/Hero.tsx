@@ -44,7 +44,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div ref={imgRef} className="w-full h-full" style={{ transform: "scale(1.05)" }}>
           <Image
-            src="/photos/DSC08228.JPG"
+            src="/robin-libiya-wedding/photos/DSC08228.JPG"
             alt="Robin and Libiya walking together"
             fill
             priority

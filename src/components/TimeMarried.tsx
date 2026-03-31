@@ -71,7 +71,7 @@ export default function TimeMarried() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/photos/DSC08110.JPG"
+          src="/robin-libiya-wedding/photos/DSC08110.JPG"
           alt="Robin and Libiya together"
           fill
           sizes="100vw"
